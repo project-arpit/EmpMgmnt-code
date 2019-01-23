@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/mvc 
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<!-- configuration to enable annotation based validation -->
+<mvc:annotation-driven />
+
+
+<!-- package of the controller classes is specified -->
+<context:component-scan base-package="com.techmentro"/>
+
+<!-- ViewResolver bean is configured. UrlBasedViewResolver
+is used by the TilesView to identify the 
+definition name for the given string.
+ -->
+ <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+ <property name="viewClass">
+ <value>
+ org.springframework.web.servlet.view.tiles2.TilesView
+  </value>
+  </property>
+ </bean>
+ <!-- Configuration of TilesConfigurer bean.
+ This bean is responsible for parsing the tiles.xml 
+ file.
+ -->
+ <bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+		<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+ 
+ <!-- Configuration of the DataSource bean.
+ DataSource is used by the JdbcTemplate for
+ creating connections.
+ -->
+ <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+ <property name="url" value="jdbc:mysql://localhost:3306/project" />
+ <property name="username" value="project" />
+ <property name="password" value="1234" />
+  </bean>
+ <!-- Configuration of the JdbcTemplate bean.
+ It will be used by all the DAOs.
+ -->
+ <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+ <property name="dataSource" ref="dataSource"/>
+ </bean>
+</beans>
+
+
+
+
+
+
+
+
