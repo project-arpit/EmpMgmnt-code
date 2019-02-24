@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import application.com.entity.*;
+import application.com.entities.User;
 
 @Repository
 public class UserDao 
@@ -78,8 +78,7 @@ public class UserDao
    class UserMapper implements RowMapper<User>
    {
 
-	public User mapRow(ResultSet rset, int index) 
-			throws SQLException {
+	public User mapRow(ResultSet rset, int index)throws SQLException {
 		User user=new User();
 		user.setId(rset.getInt(1));
 		user.setName(rset.getString(2));
@@ -89,8 +88,7 @@ public class UserDao
 		user.setStatus(rset.getInt(6));
 		return user;
 	}
-	   
-	   
+   
    }
 }
 

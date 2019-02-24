@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import application.com.dao.*;
-import application.com.entity.*;
+import application.com.dao.UserDao;
+import application.com.entities.User;
 
 @Controller
 public class UserController {

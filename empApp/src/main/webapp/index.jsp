@@ -14,7 +14,7 @@
 <%@ include file="jsp/css_js.html" %>
 </head>
 <body>
-	<div class="container">
+	<div class="container" class="col-md-6">
 		<div class="row">
 			<jsp:include page="jsp/header.jsp" />
 		</div>
