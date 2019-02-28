@@ -1,5 +1,5 @@
 <div class="col-md-4 col-md-offset-4">
-&copy; Sample App. All Rights Reserved.
+&copy; Emp App. All Rights Reserved.
 </div>	
 			
 	

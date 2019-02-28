@@ -25,7 +25,7 @@ public class UserDao
 	//Method to save User object.
 	public void save(User user) throws Exception
 	{
-	final String query="insert into Users (name,mailId,password,role,status) values(?,?,?,?,?)";	
+	final String query="insert into usermaster (name,mailId,password,role,status) values(?,?,?,?,?)";	
 	template.update(query, user.getName(),user.getMailId(),
 			user.getPassword(),user.getRole(),user.getStatus());
 	}
@@ -41,7 +41,7 @@ public class UserDao
    public User find(String m, String p) 
 	{
 	  User user=null; 
-	final String query="select * from Users where mailId=? and password=?";
+	final String query="select * from usermaster where mailId=? and password=?";
 	try
 	{
 		return (User) template.queryForObject(query,new String[]{m,p},
@@ -59,7 +59,7 @@ public class UserDao
    public boolean exists(String m) 
 	{
 	  boolean flag=false;
-	final String query="select * from Users where mailId=?";
+	final String query="select * from usermaster where mailId=?";
 	try
 	{
 		template.queryForObject(query,new String[]{m},

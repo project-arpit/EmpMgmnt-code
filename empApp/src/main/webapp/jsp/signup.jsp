@@ -29,15 +29,17 @@
 						<form:errors path="password" class="text-danger" />
 					</p>
 				</div>
+				<div class="panel-footer">
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Register</button>
+					</div>
+
+				</div>
+			</form:form>
 		</div>
 
 	</div>
-	<div class="panel-footer">
-		<div class="form-group">
-			<button type="submit" class="btn btn-primary">Register</button>
-		</div>
-		</form:form>
-	</div>
+
 </div>
 
 

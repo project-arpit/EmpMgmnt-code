@@ -14,6 +14,7 @@ public class MailValidator implements Validator {
 	@Autowired
 	UserDao dao;
 	
+	
 	public boolean supports(Class<?> c) {
 		// this method is used to specify objects
 		// of which classes can be validated using
@@ -21,7 +22,7 @@ public class MailValidator implements Validator {
 		return c.equals(User.class);
 	}
 
-	
+
 	public void validate(Object model, Errors bindingResult) 
 	{
 		// this method contains the custom validation
